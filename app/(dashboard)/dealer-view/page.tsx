@@ -1,12 +1,16 @@
+import { Suspense } from "react";
 import DealerViewContent from "./component/DealerViewContent";
 
 export const metadata = {
-    title: "advators-dealer-view",
+  title: "advators-dealer-view",
 };
 
-const page = () => {
-    return (
-        <DealerViewContent />
-    )
-}
-export default page
+const Page = () => {
+  return (
+    <Suspense fallback={<div>Loading dealer data...</div>}>
+      <DealerViewContent />
+    </Suspense>
+  );
+};
+
+export default Page;
